@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,7 +15,7 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Michael Eskin's ABC Transcription Tools" />
 		<meta property="og:description" content="A simple-to-use ABC to standard music notation converter featuring tune play, transposition, tab generation, and PDF export." />
-		<meta property="og:url" content="https://michaeleskin.com/abctools/abctools.html" />
+		<meta property="og:url" {% static ' content=' %} "https://michaeleskin.com/abctools/abctools.html" />
 		<meta property="og:site_name" content="Michael Eskin's ABC Transcription Tools" />
 		<meta property="og:image" content="https://michaeleskin.com/abctools/img/abc-icon.png" />
 		<meta name="msapplication-TileColor" content="#ffffff">
@@ -36,7 +37,7 @@
 		<link rel="icon" type="image/png" sizes="96x96" href="https://michaeleskin.com/abctools/img/abc-favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="https://michaeleskin.com/abctools/img/abc-favicon-16x16.png">
 		<link rel="manifest" href="https://michaeleskin.com/abctools/img/abc-manifest.json">
-		<link href="app.css?v=1034" media="all" rel="stylesheet" type="text/css">
+		<link href=" {% static 'app.css?v=1034' %} " media="all" rel="stylesheet" type="text/css">
 				
 	</head>
 
@@ -46,10 +47,10 @@
 
 			<div id="uioverlay" class="hidden-print">
 
-				<img id="helpbutton" class="helpbutton" src="img/helpbutton.png"  title="Get help using the ABC Transcription Tools"/>
-				<img id="playbuttonicon" class="playbuttonicon" src="img/playbutton.png"  title="Plays the current tune"/>
-				<img id="pdfbuttonicon" class="pdfbuttonicon" src="img/pdfbutton.png"  title="Export the tunes as a PDF tunebook"/>
-				<img id="zoombutton" class="zoombutton" src="img/zoomout.png"  title="Toggles between showing the ABC editor and displaying the notation full screen"/>
+				<img id="helpbutton" class="helpbutton" src=" {% static 'img/helpbutton.png' %} "  title="Get help using the ABC Transcription Tools"/>
+				<img id="playbuttonicon" class="playbuttonicon" src=" {% static 'img/playbutton.png' %} "  title="Plays the current tune"/>
+				<img id="pdfbuttonicon" class="pdfbuttonicon" src=" {% static 'img/pdfbutton.png' %} "  title="Export the tunes as a PDF tunebook"/>
+				<img id="zoombutton" class="zoombutton" src=" {% static 'img/zoomout.png' %} "  title="Toggles between showing the ABC editor and displaying the notation full screen"/>
 
 				<div id="loading-bar-spinner" class="spinner">
 
@@ -95,7 +96,7 @@
 						<font size="5" face="Comic Sans MS" id="toolpagetitle">ABC Transcription Tools</font>
 
 						<p>
-							<a href="userguide.html" target="_blank">User Guide</a>&nbsp;-&nbsp;<a href="tunesources.html" target="_blank" onclick="AddFromSearch(event);">Search for Tunes</a>&nbsp;-&nbsp;<a href="tunesources.html" target="_blank">Tune Sources</a>&nbsp;-&nbsp;<a href="https://michaeleskin.com/documents/abc_standard_v2.1.pdf" target="_blank">ABC Spec</a>&nbsp;-&nbsp;<a href="https://michaeleskin.com/documents/general_midi_extended_v3.pdf" target="_blank">MIDI</a>&nbsp;-&nbsp;<a href="https://michaeleskin.com/tunebooks.html" target="_blank">Tunebooks</a>&nbsp;-&nbsp;<a href="credits.html" target="_blank">Credits</a>&nbsp;-&nbsp;<a href="support.html" target="_blank">Support</a>&nbsp;-&nbsp;<a href="tipjars.html" target="_blank">Tip Jars</a>
+							<a href=" {% static 'userguide.html' %} " target="_blank">User Guide</a>&nbsp;-&nbsp;<a href="tunesources.html" target="_blank" onclick="AddFromSearch(event);">Search for Tunes</a>&nbsp;-&nbsp;<a href="tunesources.html" target="_blank">Tune Sources</a>&nbsp;-&nbsp;<a href="https://michaeleskin.com/documents/abc_standard_v2.1.pdf" target="_blank">ABC Spec</a>&nbsp;-&nbsp;<a href="https://michaeleskin.com/documents/general_midi_extended_v3.pdf" target="_blank">MIDI</a>&nbsp;-&nbsp;<a href="https://michaeleskin.com/tunebooks.html" target="_blank">Tunebooks</a>&nbsp;-&nbsp;<a href="credits.html" target="_blank">Credits</a>&nbsp;-&nbsp;<a href="support.html" target="_blank">Support</a>&nbsp;-&nbsp;<a href="tipjars.html" target="_blank">Tip Jars</a>
 						</p>
 
 					</div>
@@ -251,22 +252,22 @@
 	
 	</body>
 
-	<script type="text/javascript" src="jquery-1.11.1.min.js?v=1034"></script><!-- jQuery -->
-	<script type="text/javascript" src="jszip.min.js?v=1034"></script><!-- zip file handling -->
-	<script type="text/javascript" src="xml2abc-min.js?v=1034"></script><!-- to convert MusicXML to ABC -->
-	<script type="text/javascript" src="abcjs-chord-intervals.js?v=1034"></script><!-- chord intervals used by abcjs - non-minified -->
-	<script type="text/javascript" src="abcjs-basic-eskin-min.js?v=1034"></script><!-- to convert ABC to sheet music svg with tablature, transposition and audio playback options -->
-	<script type="text/javascript" src="jspdf.min.js?v=1034"></script><!-- to generate PDF using Javscript -->
-	<script type="text/javascript" src="html2image.js?v=1034"></script><!-- to convert HTML elements to bitmaps -->
-	<script type="text/javascript" src="qrcode.js?v=1034"></script><!-- to generate QR codes for the share links -->
-	<script type="text/javascript" src="lz-string.min.js?v=1034"></script><!-- used for share URL generation -->
-	<script type="text/javascript" src="daypilot-modal.min-3.10.1.js?v=1034"></script><!-- modal dialog replacement -->
-	<script type="text/javascript" src="lame.min.js?v=1034"></script><!-- .mp3 audio encoder -->
-	<script type="text/javascript" src="unmute.min.js?v=1034"></script><!-- fixes issue on iOS Safari muting tabs -->
-	<script type="text/javascript" src="tab-injectors-min.js?v=1034"></script><!-- Tab generation for ABC injection -->
-	<script type="text/javascript" src="visualscript-sdk.js?v=1034"></script><!-- SmartDraw VSON API -->
-	<script type="text/javascript" src="smartdraw-export-min.js?v=1034"></script><!-- Export to SmartDraw VSON -->
-	<script type="text/javascript" src="app-min.js?v=1034"></script><!-- main application business logic -->
-	<script type="text/javascript" src="api-keys.js?v=1034"></script><!-- API keys used by the tool -->
+	<script type="text/javascript" src=" {% static 'jquery-1.11.1.min.js?v=1034' %} "></script><!-- jQuery -->
+	<script type="text/javascript" src=" {% static 'jszip.min.js?v=1034' %} "></script><!-- zip file handling -->
+	<script type="text/javascript" src=" {% static 'xml2abc-min.js?v=1034' %} "></script><!-- to convert MusicXML to ABC -->
+	<script type="text/javascript" src=" {% static 'abcjs-chord-intervals.js?v=1034' %} "></script><!-- chord intervals used by abcjs - non-minified -->
+	<script type="text/javascript" src=" {% static 'abcjs-basic-eskin-min.js?v=1034' %} "></script><!-- to convert ABC to sheet music svg with tablature, transposition and audio playback options -->
+	<script type="text/javascript" src=" {% static 'jspdf.min.js?v=1034' %} "></script><!-- to generate PDF using Javscript -->
+	<script type="text/javascript" src=" {% static 'html2image.js?v=1034' %} "></script><!-- to convert HTML elements to bitmaps -->
+	<script type="text/javascript" src=" {% static 'qrcode.js?v=1034' %} "></script><!-- to generate QR codes for the share links -->
+	<script type="text/javascript" src=" {% static 'lz-string.min.js?v=1034' %} "></script><!-- used for share URL generation -->
+	<script type="text/javascript" src=" {% static 'daypilot-modal.min-3.10.1.js?v=1034' %} "></script><!-- modal dialog replacement -->
+	<script type="text/javascript" src=" {% static 'lame.min.js?v=1034' %} "></script><!-- .mp3 audio encoder -->
+	<script type="text/javascript" src=" {% static 'unmute.min.js?v=1034' %} "></script><!-- fixes issue on iOS Safari muting tabs -->
+	<script type="text/javascript" src=" {% static 'tab-injectors-min.js?v=1034' %} "></script><!-- Tab generation for ABC injection -->
+	<script type="text/javascript" src=" {% static 'visualscript-sdk.js?v=1034' %} "></script><!-- SmartDraw VSON API -->
+	<script type="text/javascript" src=" {% static 'smartdraw-export-min.js?v=1034' %} "></script><!-- Export to SmartDraw VSON -->
+	<script type="text/javascript" src=" {% static 'app-min.js?v=1034' %} "></script><!-- main application business logic -->
+	<script type="text/javascript" src=" {% static 'api-keys.js?v=1034' %} "></script><!-- API keys used by the tool -->
 
 </html>

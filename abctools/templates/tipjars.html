@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +15,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Michael Eskin's ABC Transcription Tools Tip Jars" />
         <meta property="og:description" content="A Tip-Supported Open-Source tool for generating standard notation from ABC and MusicXML files." />
-        <meta property="og:url" content="https://michaeleskin.com/abctools/tipjars.html" />
+        <meta property="og:url" {% static ' content=' %} "https://michaeleskin.com/abctools/tipjars.html" />
         <meta property="og:site_name" content="Michael Eskin's ABC Transcription Tools Tip Jars" />
         <meta property="og:image" content="https://michaeleskin.com/abctools/img/abc-icon.png" />
         <meta name="msapplication-TileColor" content="#ffffff">
@@ -93,7 +94,7 @@
                 <font face="Comic Sans MS" size="5" id="pagetitle">ABC Transcription Tools Tip Jars</font><br>
                 <div style="text-align: center;margin-top:24px;">
                     <a href="https://michaeleskin.com" target="_blank">
-                        <img src="img/michael.jpg" class=" size-full wp-image-22" style="margin-top:0px;" alt="Michael Eskin, headshot photo" style="margin-top: 20px" width="240" height="240" title="Click to visit Michael's Home Page">
+                        <img src=" {% static 'img/michael.jpg' %} " class=" size-full wp-image-22" style="margin-top:0px;" alt="Michael Eskin, headshot photo" style="margin-top: 20px" width="240" height="240" title="Click to visit Michael's Home Page">
                     </a>
                 </div>
                <p>This ABC to notation converter was developed by <a href="https://michaeleskin.com" target="_blank">Michael Eskin</a>.</p>

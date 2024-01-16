@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +15,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Michael Eskin's ABC Transcription Tools" />
         <meta property="og:description" content="A simple-to-use ABC to standard music notation converter featuring transposition, tab generation, and PDF export." />
-        <meta property="og:url" content="https://michaeleskin.com/abctools/abctools.html" />
+        <meta property="og:url" {% static ' content=' %} "https://michaeleskin.com/abctools/abctools.html" />
         <meta property="og:site_name" content="Michael Eskin's ABC Transcription Tools" />
         <meta property="og:image" content="https://michaeleskin.com/abctools/img/abc-icon.png" />
         <meta name="msapplication-TileColor" content="#ffffff">
@@ -89,11 +90,11 @@
             <p><strong>If you have a problem with the ABC Transcription Tools on a specific tune or tune set:</strong></p>
             <p>First generate a Share URL for the problematic tune or tune set by first clicking on the "Show Sharing" button below the ABC text area (outlined in the image below):</p>
             <div class="image_holder">
-            <img style="width:720px;" src="img/grabshareurl_3.jpg"/></p>
+            <img style="width:720px;" src=" {% static 'img/grabshareurl_ {% static '3.jpg' %} "/></p>' %} 
         </div>
         <p>This will bring up the Share URL text box.</p>
         <p>Click "Copy Share URL" to grab the complete Share URL text shown in the text box and paste it into an email and send it to me:</p>
-        <p><a href="mailto:seisiuneer@gmail.com?subject=ABC Tools Support Request">Click here to email me an ABC Tools Support Request</a></p>
+        <p><a href=" {% static 'mailto:seisiuneer@gmail.com?subject=ABC Tools Support Request' %} ">Click here to email me an ABC Tools Support Request</a></p>
         <p>With that Share URL, I'll be able to see exactly what you're seeing in the tool.</p>
         <p>Note: If you see a message in the Share URL box that the share link is too long, you may have to reduce the amount of ABC until the share link can be less than 8000 characters long.</p>
         <hr>
@@ -127,7 +128,7 @@
         <hr>
         <h1>New Feature Requests</h1>
         <p>I'm always interested in any suggestions and ideas for new features or enhancements!</p>
-        <p><a href="mailto:seisiuneer@gmail.com?subject=ABC Tools Feature Suggestion">Click here to email me a feature suggestion!</a></p>
+        <p><a href=" {% static 'mailto:seisiuneer@gmail.com?subject=ABC Tools Feature Suggestion' %} ">Click here to email me a feature suggestion!</a></p>
         <hr>
     </div>
 </body>
