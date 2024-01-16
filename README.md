@@ -1,4 +1,5 @@
-# abctools
+# abctools-django
+<p>This fork by Nicholas Gower seeks to convert this project into a Django app that can interact with databases in a django project.</p>
 <p>This ABC tunes-to-notation converter was developed by <a href="https://michaeleskin.com" target="_blank">Michael Eskin</a>.</p>
 <p>This converter can generate standard music notation from ABC and MusicXML files, show note names along with notation, and also create tablature for Mandolin, GDAD Bouzouki, CGDAE Mandolin, Standard Guitar, DADGAD Guitar, Ukulele or Tin Whistle.</p>
 <p>It can also transpose ABC up or down in semitone increments.</p>
