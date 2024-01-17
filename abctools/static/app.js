@@ -29,7 +29,7 @@
  *
  * 
  **/
-
+const enable_tip_jar=false;
 var gShowAdvancedControls = false;
 var gStripAnnotations = false;
 var gStripTextAnnotations = false;
@@ -32186,7 +32186,7 @@ function DoStartup() {
 	}
 
 	// Occasional reminder
-	if (gTipJarCount == 25){
+	if (gTipJarCount == 25 && enable_tip_jar){
 
 		TipJarReminderDialog();
 
