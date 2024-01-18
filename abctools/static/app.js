@@ -304,7 +304,7 @@ var gFeaturesShowTabButtons = true;
 var gForceTabSave = false;
 
 // Global reference to the ABC editor
-var gTheABC = document.getElementById("abc");
+var gTheABC = document.getElementById("id_abc");
 
 //
 // Tune utility functions
@@ -31797,7 +31797,7 @@ function DoStartup() {
 	// If a paste was detected, force a full render because the tunes may have changed while
 	// the tune count has not
 	//
-	document.getElementById('abc').oninput = 
+	gTheABC.oninput = 
 		debounce( () => {
 
 			// Set dirty
@@ -31822,7 +31822,7 @@ function DoStartup() {
 	//
 	// Clean "smart quotes" on paste
 	//
-	document.getElementById('abc').onpaste = 
+	gTheABC.onpaste = 
 
 		function(){
 
@@ -31849,7 +31849,7 @@ function DoStartup() {
 	// Doesn't work well on iOS or Android, so disabling it there 
 	//
 
-	document.getElementById('abc').onclick = 
+	gTheABC.onclick = 
 		debounce( () => {
 
 		    MakeTuneVisible(false);
