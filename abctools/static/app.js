@@ -449,6 +449,9 @@ function findTuneByOffset(start){
 // Return the tune ABC at a specific index
 //
 //
+function autofillABC(){
+
+}
 function getTuneByIndex(tuneNumber){
 
 	var theNotes = gTheABC.value;
@@ -30544,7 +30547,7 @@ function restoreStateFromLocalStorage(){
 
 		UpdateLocalStorage();
 
-		showWelcomeScreen();
+		//showWelcomeScreen();
 
 	}
 
@@ -31748,6 +31751,9 @@ function DoStartup() {
 		elem.style.width = "32px"
 		elem.style.height = "32px";	
 
+		//
+		
+		
 	}
 
 	// On iPhone and Android, move the zoom button over a bit
@@ -32206,6 +32212,12 @@ function DoStartup() {
 
 	// And set the focus
     gTheABC.focus();
+
+	//Autofill the page with the global variable preFilledABC, defined from a file stored in the backend.
+	//console.log(preFilledABC);
+	gTheABC.value=preFilledABC;
+	OnABCTextChange()
+	
 
 }
 
