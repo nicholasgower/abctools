@@ -97,7 +97,8 @@
 				</div>
 
 				<div id="notenlinks" class="hidden-print">
-
+					 <form action="{%url 'song_directory:song_upload' %}" method="POST"> 
+						{% csrf_token %}
 					<div id="topbar">
 
 						 <h2 size="5" face="Arial" id="toolpagetitle">Tune Editor</h2> 
@@ -116,6 +117,7 @@
 					</div>
 
 					<!-- name of abc file selected -->
+
 					<p id="abc-selected">No ABC file selected</p>
 
 					<div id="fileoperations">
@@ -137,11 +139,16 @@
 
 					<div id="inputarea">
 
-						<textarea id="abc" rows="12" cols="70" spellcheck="false" autocorrect="off" autocapitalize="off"></textarea>
-						
+						<textarea id="id_abc" name="abc" rows="12" cols="70" spellcheck="false" autocorrect="off" autocapitalize="off"></textarea>
+						 
 					</div>
-					
+					{{form.name.name|title}}: {{form.name}}
+					{{form.description.name|title}}: {{form.description}}
+					<button hx-post="{% url 'song_directory:submit_clicked' %}" hx-swap="outerHTML">
+						Submit
+					</button>
 
+					 </form> 
 				</div>
 
 				<div id="notenrechts" class="hidden-print">
