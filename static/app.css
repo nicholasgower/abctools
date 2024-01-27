@@ -20,13 +20,14 @@ a:link {
 }
 
 /* visited link */
+
 a:visited {
-  color: black;
+  /* color: black; */
 }
 
 /* mouse over link */
 a:hover {
-  color: #00BB00;
+  /* color: #00BB00; */
 }
 
 /* selected link */ /*
