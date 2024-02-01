@@ -6,7 +6,14 @@
 <html>
 	<head>
 		
-		<title>Create a new Tune</title>
+		<title>
+			{%if edit_mode%}
+				Edit a Tune
+			
+			{%else%}
+				Create a new Tune
+			{%endif%}
+		</title>
 		
 		<meta charset="UTF-8">
 		<meta http-equiv="Content-Type" content="text/html">
@@ -97,11 +104,25 @@
 				</div>
 
 				<div id="notenlinks" class="hidden-print">
-					 <form action="{%url 'song_directory:song_upload' %}" method="POST"> 
+					 <form action= 
+					 {% if edit_mode %}
+					  	"{% url 'song_directory:song_edit' song.url_code %}"
+						
+					  {% else %} 
+					  	"{% url 'song_directory:song_upload' %}"
+						 {% endif %} 
+						 method="POST"> 
 						{% csrf_token %}
 					<div id="topbar">
 
-						 <h2 size="5" face="Arial" id="toolpagetitle">New Tune</h2> 
+						 <h2 size="5" face="Arial" id="toolpagetitle">
+							{%if edit_mode%}
+								Edit "{{tune_title}}"
+			
+							{%else%}
+								New Tune
+							{%endif%}
+						</h2> 
 
 						<p>
 							{# <a href=" {% url 'abctools:userguide' %} " target="_blank">User Guide</a> #}
@@ -143,8 +164,12 @@
 						<textarea id="id_abc" name="abc" rows="12" cols="70" spellcheck="false" autocorrect="off" autocapitalize="off"></textarea>
 						 
 					</div>
-					{{form.name.name|title}}: {{form.name}}
+					{% if not edit_mode%}
+						{{form.name.name|title}}: {{form.name}}
+					{%endif%}
+					
 					{{form.description.name|title}}: {{form.description}}
+					{{form.availability.label}}: {{form.availability}}
 					<button hx-post="{% url 'song_directory:submit_clicked' %}" hx-swap="outerHTML">
 						Submit
 					</button>
@@ -276,7 +301,13 @@
 	
 	</body>
 	<script type="text/javascript">
-		const preFilledABC= "{{tune_autofill|escapejs}}";
+		const gEditMode= {{edit_mode|lower}}; 
+		const preFilledABC= "{{song.abc|escapejs}}";
+		{% if edit_mode %}
+			$("#id_description").val("{{song.description}}");
+			$("#id_availability").val("{{song.availability}}");
+		{% endif %}
+		
 		console.log("Text filled in.");
 		
 	</script>
